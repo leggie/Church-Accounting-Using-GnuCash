@@ -1,0 +1,900 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--https://wiki.gnucash.org/wiki/Account_Hierarchy_Template-->
+<gnc-account-example
+     xmlns:gnc-act="http://www.gnucash.org/XML/gnc-act"
+     xmlns:gnc="http://www.gnucash.org/XML/gnc"
+     xmlns:act="http://www.gnucash.org/XML/act"
+     xmlns:book="http://www.gnucash.org/XML/book"
+     xmlns:cd="http://www.gnucash.org/XML/cd"
+     xmlns:cmdty="http://www.gnucash.org/XML/cmdty"
+     xmlns:price="http://www.gnucash.org/XML/price"
+     xmlns:slot="http://www.gnucash.org/XML/slot"
+     xmlns:split="http://www.gnucash.org/XML/split"
+     xmlns:sx="http://www.gnucash.org/XML/sx"
+     xmlns:trn="http://www.gnucash.org/XML/trn"
+     xmlns:ts="http://www.gnucash.org/XML/ts"
+     xmlns:fs="http://www.gnucash.org/XML/fs"
+     xmlns:bgt="http://www.gnucash.org/XML/bgt"
+     xmlns:recurrence="http://www.gnucash.org/XML/recurrence"
+     xmlns:lot="http://www.gnucash.org/XML/lot"
+     xmlns:addr="http://www.gnucash.org/XML/addr"
+     xmlns:owner="http://www.gnucash.org/XML/owner"
+     xmlns:billterm="http://www.gnucash.org/XML/billterm"
+     xmlns:bt-days="http://www.gnucash.org/XML/bt-days"
+     xmlns:bt-prox="http://www.gnucash.org/XML/bt-prox"
+     xmlns:cust="http://www.gnucash.org/XML/cust"
+     xmlns:employee="http://www.gnucash.org/XML/employee"
+     xmlns:entry="http://www.gnucash.org/XML/entry"
+     xmlns:invoice="http://www.gnucash.org/XML/invoice"
+     xmlns:job="http://www.gnucash.org/XML/job"
+     xmlns:order="http://www.gnucash.org/XML/order"
+     xmlns:taxtable="http://www.gnucash.org/XML/taxtable"
+     xmlns:tte="http://www.gnucash.org/XML/tte"
+     xmlns:vendor="http://www.gnucash.org/XML/vendor">
+ <gnc-act:title>
+  Church Members Accounts
+ </gnc-act:title>
+ <gnc-act:short-description>
+  Account Hierarchy for Adding church members to the Church Accounts 
+ </gnc-act:short-description>
+ <gnc-act:long-description>
+  This is a custom account Hierarchy automatically created by a macro, run from an excel sheet with all the church register details.  This can be used with the gnucash new account hierarchy wizard to import the accounts of the church members into the the Assets > Current Accounts > Debtors account hierarchy.  This macro is authored by Jacob Oommen, oncde upon a time Trustee Finance of St. Stephens Marthoma Church, Koramangala, Bangalore.
+ </gnc-act:long-description>
+ <gnc-act:exclude-from-select-all>1</gnc-act:exclude-from-select-all>
+<gnc:account version="2.0.0">
+ <act:name>Root Account</act:name>
+ <act:id type="new">1972cce2e2364f95b2b0bc014502661d</act:id>
+ <act:type>ROOT</act:type>
+   <act:commodity>
+    <cmdty:space>ISO4217</cmdty:space>
+    <cmdty:id>USD</cmdty:id>
+  </act:commodity>
+ <act:commodity-scu>100</act:commodity-scu>
+</gnc:account>
+<gnc:account version="2.0.0">
+ <act:name>Assets</act:name>
+ <act:id type="new">ee8238ee2c2ce590160761df09b99b72</act:id>
+ <act:type>ASSET</act:type>
+ <act:commodity>
+  <cmdty:space>ISO4217</cmdty:space>
+  <cmdty:id>USD</cmdty:id>
+ </act:commodity>
+ <act:description>Assets</act:description>
+ <act:parent type="new">1972cce2e2364f95b2b0bc014502661d</act:parent>
+ <act:slots>
+  <slot>
+   <slot:key>placeholder</slot:key>
+   <slot:value type="string">true</slot:value>
+  </slot>
+ </act:slots>
+</gnc:account>
+<gnc:account version="2.0.0">
+ <act:name>Current Assets</act:name>
+ <act:id type="new">8999739a6bfc46088a3ea5ec45e5f8a4</act:id>
+ <act:type>ASSET</act:type>
+ <act:commodity>
+  <cmdty:space>ISO4217</cmdty:space>
+  <cmdty:id>USD</cmdty:id>
+ </act:commodity>
+ <act:description>Current Assets</act:description>
+ <act:parent type="new">ee8238ee2c2ce590160761df09b99b72</act:parent>
+ <act:slots>
+  <slot>
+   <slot:key>placeholder</slot:key>
+   <slot:value type="string">true</slot:value>
+  </slot>
+ </act:slots>
+</gnc:account>
+<gnc:account version="2.0.0">
+ <act:name>Debtors</act:name>
+ <act:id type="new">8999739a6bfc46088a3ea5ec45e5f8a5</act:id>
+ <act:type>ASSET</act:type>
+ <act:commodity>
+  <cmdty:space>ISO4217</cmdty:space>
+  <cmdty:id>USD</cmdty:id>
+ </act:commodity>
+ <act:description>Create all church members account under this account</act:description>
+ <act:parent type="new">8999739a6bfc46088a3ea5ec45e5f8a4</act:parent>
+ <act:slots>
+  <slot>
+   <slot:key>placeholder</slot:key>
+   <slot:value type="string">true</slot:value>
+  </slot>
+ </act:slots>
+</gnc:account>
+<gnc:account version="2.0.0">
+	<act:name>Alice Bryant</act:name>
+	<act:id type="new">8D59A51F24C9491DA14642AA7058FB1A</act:id>
+	<act:type>ASSET</act:type>
+	<act:commodity>
+		<cmdty:space>ISO4217</cmdty:space>
+		<cmdty:id>USD</cmdty:id>
+	</act:commodity>
+	<act:commodity-scu>100</act:commodity-scu>
+	<act:code>1</act:code>
+	<act:description>3 Kim Street, Primero de Mayo, Veracruz Llave, India</act:description>
+	<act:slots>
+		<slot>
+			<slot:key>color</slot:key>
+			<slot:value type="string">Not Set</slot:value>
+		</slot>
+		<slot>
+			<slot:key>notes</slot:key>
+			<slot:value type="string">Full Name: 
+Mr Alice Bryant
+Address: 
+3 Kim Street, Primero de Mayo, Veracruz Llave, India
+Land Line: 
+52-(506)175-2363
+Mobile: 
+374-(497)400-5276
+Group: 
+Sarjapur
+</slot:value>
+		</slot>
+	</act:slots>
+	<act:parent type="guid">8999739a6bfc46088a3ea5ec45e5f8a5</act:parent>
+</gnc:account>
+<gnc:account version="2.0.0">
+	<act:name>Emily Ryan</act:name>
+	<act:id type="new">718819F3675A4DDA9F77DE0597AEAAC7</act:id>
+	<act:type>ASSET</act:type>
+	<act:commodity>
+		<cmdty:space>ISO4217</cmdty:space>
+		<cmdty:id>USD</cmdty:id>
+	</act:commodity>
+	<act:commodity-scu>100</act:commodity-scu>
+	<act:code>2</act:code>
+	<act:description>27450 Green Ridge Court, Sritanjung, India</act:description>
+	<act:slots>
+		<slot>
+			<slot:key>color</slot:key>
+			<slot:value type="string">Not Set</slot:value>
+		</slot>
+		<slot>
+			<slot:key>notes</slot:key>
+			<slot:value type="string">Full Name: 
+Mr Emily Ryan
+Address: 
+27450 Green Ridge Court, Sritanjung, India
+Land Line: 
+62-(773)528-0584
+Mobile: 
+57-(984)642-7423
+Group: 
+Koramangala
+</slot:value>
+		</slot>
+	</act:slots>
+	<act:parent type="guid">8999739a6bfc46088a3ea5ec45e5f8a5</act:parent>
+</gnc:account>
+<gnc:account version="2.0.0">
+	<act:name>Eric Barnes</act:name>
+	<act:id type="new">42D63ED59F3D462F9EB013220116A511</act:id>
+	<act:type>ASSET</act:type>
+	<act:commodity>
+		<cmdty:space>ISO4217</cmdty:space>
+		<cmdty:id>USD</cmdty:id>
+	</act:commodity>
+	<act:commodity-scu>100</act:commodity-scu>
+	<act:code>3</act:code>
+	<act:description>7561 Novick Street, Cañete, India</act:description>
+	<act:slots>
+		<slot>
+			<slot:key>color</slot:key>
+			<slot:value type="string">Not Set</slot:value>
+		</slot>
+		<slot>
+			<slot:key>notes</slot:key>
+			<slot:value type="string">Full Name: 
+Rev Eric Barnes
+Address: 
+7561 Novick Street, Cañete, India
+Land Line: 
+56-(110)760-7978
+Mobile: 
+62-(931)376-6654
+Group: 
+Sarjapur
+</slot:value>
+		</slot>
+	</act:slots>
+	<act:parent type="guid">8999739a6bfc46088a3ea5ec45e5f8a5</act:parent>
+</gnc:account>
+<gnc:account version="2.0.0">
+	<act:name>Kevin Moreno</act:name>
+	<act:id type="new">84B983A817E7478CA886D0A2ECFD1979</act:id>
+	<act:type>ASSET</act:type>
+	<act:commodity>
+		<cmdty:space>ISO4217</cmdty:space>
+		<cmdty:id>USD</cmdty:id>
+	</act:commodity>
+	<act:commodity-scu>100</act:commodity-scu>
+	<act:code>4</act:code>
+	<act:description>738 Monument Place, Pryazovs’ke, India</act:description>
+	<act:slots>
+		<slot>
+			<slot:key>color</slot:key>
+			<slot:value type="string">Not Set</slot:value>
+		</slot>
+		<slot>
+			<slot:key>notes</slot:key>
+			<slot:value type="string">Full Name: 
+Mr Kevin Moreno
+Address: 
+738 Monument Place, Pryazovs’ke, India
+Land Line: 
+380-(714)885-7625
+Mobile: 
+48-(968)596-4633
+Group: 
+Sarjapur
+</slot:value>
+		</slot>
+	</act:slots>
+	<act:parent type="guid">8999739a6bfc46088a3ea5ec45e5f8a5</act:parent>
+</gnc:account>
+<gnc:account version="2.0.0">
+	<act:name>Jeffrey Duncan</act:name>
+	<act:id type="new">F8FCB9556BE54FF3A3EC774E3B221F33</act:id>
+	<act:type>ASSET</act:type>
+	<act:commodity>
+		<cmdty:space>ISO4217</cmdty:space>
+		<cmdty:id>USD</cmdty:id>
+	</act:commodity>
+	<act:commodity-scu>100</act:commodity-scu>
+	<act:code>5</act:code>
+	<act:description>38 Gerald Drive, Hantsport, Nova Scotia, India</act:description>
+	<act:slots>
+		<slot>
+			<slot:key>color</slot:key>
+			<slot:value type="string">Not Set</slot:value>
+		</slot>
+		<slot>
+			<slot:key>notes</slot:key>
+			<slot:value type="string">Full Name: 
+Ms Jeffrey Duncan
+Address: 
+38 Gerald Drive, Hantsport, Nova Scotia, India
+Land Line: 
+1-(625)961-8167
+Mobile: 
+86-(615)289-9485
+Group: 
+Koramangala
+</slot:value>
+		</slot>
+	</act:slots>
+	<act:parent type="guid">8999739a6bfc46088a3ea5ec45e5f8a5</act:parent>
+</gnc:account>
+<gnc:account version="2.0.0">
+	<act:name>Alan Kelley</act:name>
+	<act:id type="new">65C16949F8F94876B96D6E93A0EF7D56</act:id>
+	<act:type>ASSET</act:type>
+	<act:commodity>
+		<cmdty:space>ISO4217</cmdty:space>
+		<cmdty:id>USD</cmdty:id>
+	</act:commodity>
+	<act:commodity-scu>100</act:commodity-scu>
+	<act:code>6</act:code>
+	<act:description>60 Maple Wood Lane, Melgar, India</act:description>
+	<act:slots>
+		<slot>
+			<slot:key>color</slot:key>
+			<slot:value type="string">Not Set</slot:value>
+		</slot>
+		<slot>
+			<slot:key>notes</slot:key>
+			<slot:value type="string">Full Name: 
+Mrs Alan Kelley
+Address: 
+60 Maple Wood Lane, Melgar, India
+Land Line: 
+57-(473)276-7706
+Mobile: 
+7-(201)936-4838
+Group: 
+Sarjapur
+</slot:value>
+		</slot>
+	</act:slots>
+	<act:parent type="guid">8999739a6bfc46088a3ea5ec45e5f8a5</act:parent>
+</gnc:account>
+<gnc:account version="2.0.0">
+	<act:name>Karen Morris</act:name>
+	<act:id type="new">12D1A7228B28408D9BDDEBF44925D1AA</act:id>
+	<act:type>ASSET</act:type>
+	<act:commodity>
+		<cmdty:space>ISO4217</cmdty:space>
+		<cmdty:id>USD</cmdty:id>
+	</act:commodity>
+	<act:commodity-scu>100</act:commodity-scu>
+	<act:code>7</act:code>
+	<act:description>57 Express Terrace, Pulau Pinang, Pulau Pinang, India</act:description>
+	<act:slots>
+		<slot>
+			<slot:key>color</slot:key>
+			<slot:value type="string">Not Set</slot:value>
+		</slot>
+		<slot>
+			<slot:key>notes</slot:key>
+			<slot:value type="string">Full Name: 
+Honorable Karen Morris
+Address: 
+57 Express Terrace, Pulau Pinang, Pulau Pinang, India
+Land Line: 
+60-(652)425-1788
+Mobile: 
+380-(144)527-8648
+Group: 
+Sarjapur
+</slot:value>
+		</slot>
+	</act:slots>
+	<act:parent type="guid">8999739a6bfc46088a3ea5ec45e5f8a5</act:parent>
+</gnc:account>
+<gnc:account version="2.0.0">
+	<act:name>Jack Murray</act:name>
+	<act:id type="new">5D600540E926497E978C6F1A2CD49C93</act:id>
+	<act:type>ASSET</act:type>
+	<act:commodity>
+		<cmdty:space>ISO4217</cmdty:space>
+		<cmdty:id>USD</cmdty:id>
+	</act:commodity>
+	<act:commodity-scu>100</act:commodity-scu>
+	<act:code>8</act:code>
+	<act:description>2 Delladonna Road, Bianzhuang, India</act:description>
+	<act:slots>
+		<slot>
+			<slot:key>color</slot:key>
+			<slot:value type="string">Not Set</slot:value>
+		</slot>
+		<slot>
+			<slot:key>notes</slot:key>
+			<slot:value type="string">Full Name: 
+Mr Jack Murray
+Address: 
+2 Delladonna Road, Bianzhuang, India
+Land Line: 
+86-(236)853-7174
+Mobile: 
+66-(353)548-6320
+Group: 
+Koramangala
+</slot:value>
+		</slot>
+	</act:slots>
+	<act:parent type="guid">8999739a6bfc46088a3ea5ec45e5f8a5</act:parent>
+</gnc:account>
+<gnc:account version="2.0.0">
+	<act:name>Phyllis Bell</act:name>
+	<act:id type="new">2A217C1D8E9D414B8C0BC1D2FBACE0EF</act:id>
+	<act:type>ASSET</act:type>
+	<act:commodity>
+		<cmdty:space>ISO4217</cmdty:space>
+		<cmdty:id>USD</cmdty:id>
+	</act:commodity>
+	<act:commodity-scu>100</act:commodity-scu>
+	<act:code>9</act:code>
+	<act:description>36647 Sullivan Place, Bovec, India</act:description>
+	<act:slots>
+		<slot>
+			<slot:key>color</slot:key>
+			<slot:value type="string">Not Set</slot:value>
+		</slot>
+		<slot>
+			<slot:key>notes</slot:key>
+			<slot:value type="string">Full Name: 
+Honorable Phyllis Bell
+Address: 
+36647 Sullivan Place, Bovec, India
+Land Line: 
+386-(285)776-0064
+Mobile: 
+7-(164)696-4952
+Group: 
+Sarjapur
+</slot:value>
+		</slot>
+	</act:slots>
+	<act:parent type="guid">8999739a6bfc46088a3ea5ec45e5f8a5</act:parent>
+</gnc:account>
+<gnc:account version="2.0.0">
+	<act:name>Jacqueline Gordon</act:name>
+	<act:id type="new">F26C935E2DA04CEDAD922E11878F838A</act:id>
+	<act:type>ASSET</act:type>
+	<act:commodity>
+		<cmdty:space>ISO4217</cmdty:space>
+		<cmdty:id>USD</cmdty:id>
+	</act:commodity>
+	<act:commodity-scu>100</act:commodity-scu>
+	<act:code>10</act:code>
+	<act:description>01 Bellgrove Crossing, Kawm Umbu, India</act:description>
+	<act:slots>
+		<slot>
+			<slot:key>color</slot:key>
+			<slot:value type="string">Not Set</slot:value>
+		</slot>
+		<slot>
+			<slot:key>notes</slot:key>
+			<slot:value type="string">Full Name: 
+Rev Jacqueline Gordon
+Address: 
+01 Bellgrove Crossing, Kawm Umbu, India
+Land Line: 
+20-(575)234-2706
+Mobile: 
+86-(633)510-3822
+Group: 
+Sarjapur
+</slot:value>
+		</slot>
+	</act:slots>
+	<act:parent type="guid">8999739a6bfc46088a3ea5ec45e5f8a5</act:parent>
+</gnc:account>
+<gnc:account version="2.0.0">
+	<act:name>Carl Frazier</act:name>
+	<act:id type="new">F918FF2E5F9349B8A858CF37CFD31E73</act:id>
+	<act:type>ASSET</act:type>
+	<act:commodity>
+		<cmdty:space>ISO4217</cmdty:space>
+		<cmdty:id>USD</cmdty:id>
+	</act:commodity>
+	<act:commodity-scu>100</act:commodity-scu>
+	<act:code>11</act:code>
+	<act:description>4 Doe Crossing Place, Barra de São Francisco, India</act:description>
+	<act:slots>
+		<slot>
+			<slot:key>color</slot:key>
+			<slot:value type="string">Not Set</slot:value>
+		</slot>
+		<slot>
+			<slot:key>notes</slot:key>
+			<slot:value type="string">Full Name: 
+Honorable Carl Frazier
+Address: 
+4 Doe Crossing Place, Barra de São Francisco, India
+Land Line: 
+55-(289)277-9776
+Mobile: 
+374-(905)746-4052
+Group: 
+Koramangala
+</slot:value>
+		</slot>
+	</act:slots>
+	<act:parent type="guid">8999739a6bfc46088a3ea5ec45e5f8a5</act:parent>
+</gnc:account>
+<gnc:account version="2.0.0">
+	<act:name>Gerald Russell</act:name>
+	<act:id type="new">EBE17917CF0A45C189BBEA8F5C663C74</act:id>
+	<act:type>ASSET</act:type>
+	<act:commodity>
+		<cmdty:space>ISO4217</cmdty:space>
+		<cmdty:id>USD</cmdty:id>
+	</act:commodity>
+	<act:commodity-scu>100</act:commodity-scu>
+	<act:code>12</act:code>
+	<act:description>69 Thierer Pass, Yeghvard, India</act:description>
+	<act:slots>
+		<slot>
+			<slot:key>color</slot:key>
+			<slot:value type="string">Not Set</slot:value>
+		</slot>
+		<slot>
+			<slot:key>notes</slot:key>
+			<slot:value type="string">Full Name: 
+Rev Gerald Russell
+Address: 
+69 Thierer Pass, Yeghvard, India
+Land Line: 
+374-(359)970-6583
+Mobile: 
+63-(402)499-0318
+Group: 
+Sarjapur
+</slot:value>
+		</slot>
+	</act:slots>
+	<act:parent type="guid">8999739a6bfc46088a3ea5ec45e5f8a5</act:parent>
+</gnc:account>
+<gnc:account version="2.0.0">
+	<act:name>Benjamin Wells</act:name>
+	<act:id type="new">A1E90ADB378C4D0ABE5893B6D260F68E</act:id>
+	<act:type>ASSET</act:type>
+	<act:commodity>
+		<cmdty:space>ISO4217</cmdty:space>
+		<cmdty:id>USD</cmdty:id>
+	</act:commodity>
+	<act:commodity-scu>100</act:commodity-scu>
+	<act:code>13</act:code>
+	<act:description>71 South Court, Mahébourg, India</act:description>
+	<act:slots>
+		<slot>
+			<slot:key>color</slot:key>
+			<slot:value type="string">Not Set</slot:value>
+		</slot>
+		<slot>
+			<slot:key>notes</slot:key>
+			<slot:value type="string">Full Name: 
+Mrs Benjamin Wells
+Address: 
+71 South Court, Mahébourg, India
+Land Line: 
+230-(510)543-5326
+Mobile: 
+232-(374)180-9332
+Group: 
+Sarjapur
+</slot:value>
+		</slot>
+	</act:slots>
+	<act:parent type="guid">8999739a6bfc46088a3ea5ec45e5f8a5</act:parent>
+</gnc:account>
+<gnc:account version="2.0.0">
+	<act:name>Donna Wheeler</act:name>
+	<act:id type="new">2CA32AC95ADA4471A858D84DDE4B0354</act:id>
+	<act:type>ASSET</act:type>
+	<act:commodity>
+		<cmdty:space>ISO4217</cmdty:space>
+		<cmdty:id>USD</cmdty:id>
+	</act:commodity>
+	<act:commodity-scu>100</act:commodity-scu>
+	<act:code>14</act:code>
+	<act:description>7289 Shasta Pass, Kuroda, India</act:description>
+	<act:slots>
+		<slot>
+			<slot:key>color</slot:key>
+			<slot:value type="string">Not Set</slot:value>
+		</slot>
+		<slot>
+			<slot:key>notes</slot:key>
+			<slot:value type="string">Full Name: 
+Ms Donna Wheeler
+Address: 
+7289 Shasta Pass, Kuroda, India
+Land Line: 
+81-(351)173-9610
+Mobile: 
+591-(260)488-8134
+Group: 
+Koramangala
+</slot:value>
+		</slot>
+	</act:slots>
+	<act:parent type="guid">8999739a6bfc46088a3ea5ec45e5f8a5</act:parent>
+</gnc:account>
+<gnc:account version="2.0.0">
+	<act:name>Emily Bennett</act:name>
+	<act:id type="new">969087CFE99842B1A504FCE68432B168</act:id>
+	<act:type>ASSET</act:type>
+	<act:commodity>
+		<cmdty:space>ISO4217</cmdty:space>
+		<cmdty:id>USD</cmdty:id>
+	</act:commodity>
+	<act:commodity-scu>100</act:commodity-scu>
+	<act:code>15</act:code>
+	<act:description>54 Hudson Hill, Pinara, India</act:description>
+	<act:slots>
+		<slot>
+			<slot:key>color</slot:key>
+			<slot:value type="string">Not Set</slot:value>
+		</slot>
+		<slot>
+			<slot:key>notes</slot:key>
+			<slot:value type="string">Full Name: 
+Honorable Emily Bennett
+Address: 
+54 Hudson Hill, Pinara, India
+Land Line: 
+62-(425)305-6065
+Mobile: 
+62-(607)967-4184
+Group: 
+Sarjapur
+</slot:value>
+		</slot>
+	</act:slots>
+	<act:parent type="guid">8999739a6bfc46088a3ea5ec45e5f8a5</act:parent>
+</gnc:account>
+<gnc:account version="2.0.0">
+	<act:name>Richard Shaw</act:name>
+	<act:id type="new">F809DFAC04C843D2A61B5B576320D567</act:id>
+	<act:type>ASSET</act:type>
+	<act:commodity>
+		<cmdty:space>ISO4217</cmdty:space>
+		<cmdty:id>USD</cmdty:id>
+	</act:commodity>
+	<act:commodity-scu>100</act:commodity-scu>
+	<act:code>16</act:code>
+	<act:description>64610 Lawn Junction, Labège, Midi-Pyrénées, India</act:description>
+	<act:slots>
+		<slot>
+			<slot:key>color</slot:key>
+			<slot:value type="string">Not Set</slot:value>
+		</slot>
+		<slot>
+			<slot:key>notes</slot:key>
+			<slot:value type="string">Full Name: 
+Honorable Richard Shaw
+Address: 
+64610 Lawn Junction, Labège, Midi-Pyrénées, India
+Land Line: 
+33-(777)919-7693
+Mobile: 
+48-(997)199-8998
+Group: 
+Sarjapur
+</slot:value>
+		</slot>
+	</act:slots>
+	<act:parent type="guid">8999739a6bfc46088a3ea5ec45e5f8a5</act:parent>
+</gnc:account>
+<gnc:account version="2.0.0">
+	<act:name>Pamela Lynch</act:name>
+	<act:id type="new">6C1594D092BD460596861D1AA2025713</act:id>
+	<act:type>ASSET</act:type>
+	<act:commodity>
+		<cmdty:space>ISO4217</cmdty:space>
+		<cmdty:id>USD</cmdty:id>
+	</act:commodity>
+	<act:commodity-scu>100</act:commodity-scu>
+	<act:code>17</act:code>
+	<act:description>8 Almo Hill, Garešnica, India</act:description>
+	<act:slots>
+		<slot>
+			<slot:key>color</slot:key>
+			<slot:value type="string">Not Set</slot:value>
+		</slot>
+		<slot>
+			<slot:key>notes</slot:key>
+			<slot:value type="string">Full Name: 
+Mrs Pamela Lynch
+Address: 
+8 Almo Hill, Garešnica, India
+Land Line: 
+385-(678)793-1906
+Mobile: 
+62-(935)462-6212
+Group: 
+Koramangala
+</slot:value>
+		</slot>
+	</act:slots>
+	<act:parent type="guid">8999739a6bfc46088a3ea5ec45e5f8a5</act:parent>
+</gnc:account>
+<gnc:account version="2.0.0">
+	<act:name>Steve Reyes</act:name>
+	<act:id type="new">18C2C4E212CD4BB09D0648D4D52AC368</act:id>
+	<act:type>ASSET</act:type>
+	<act:commodity>
+		<cmdty:space>ISO4217</cmdty:space>
+		<cmdty:id>USD</cmdty:id>
+	</act:commodity>
+	<act:commodity-scu>100</act:commodity-scu>
+	<act:code>18</act:code>
+	<act:description>14034 Bobwhite Parkway, Zhubei, India</act:description>
+	<act:slots>
+		<slot>
+			<slot:key>color</slot:key>
+			<slot:value type="string">Not Set</slot:value>
+		</slot>
+		<slot>
+			<slot:key>notes</slot:key>
+			<slot:value type="string">Full Name: 
+Mrs Steve Reyes
+Address: 
+14034 Bobwhite Parkway, Zhubei, India
+Land Line: 
+886-(512)397-6638
+Mobile: 
+54-(160)564-1212
+Group: 
+Sarjapur
+</slot:value>
+		</slot>
+	</act:slots>
+	<act:parent type="guid">8999739a6bfc46088a3ea5ec45e5f8a5</act:parent>
+</gnc:account>
+<gnc:account version="2.0.0">
+	<act:name>Rose Lynch</act:name>
+	<act:id type="new">E7987398000548B0B818372094397302</act:id>
+	<act:type>ASSET</act:type>
+	<act:commodity>
+		<cmdty:space>ISO4217</cmdty:space>
+		<cmdty:id>USD</cmdty:id>
+	</act:commodity>
+	<act:commodity-scu>100</act:commodity-scu>
+	<act:code>19</act:code>
+	<act:description>18 7th Junction, Pršovce, India</act:description>
+	<act:slots>
+		<slot>
+			<slot:key>color</slot:key>
+			<slot:value type="string">Not Set</slot:value>
+		</slot>
+		<slot>
+			<slot:key>notes</slot:key>
+			<slot:value type="string">Full Name: 
+Mr Rose Lynch
+Address: 
+18 7th Junction, Pršovce, India
+Land Line: 
+389-(542)348-0488
+Mobile: 
+51-(229)918-4609
+Group: 
+Sarjapur
+</slot:value>
+		</slot>
+	</act:slots>
+	<act:parent type="guid">8999739a6bfc46088a3ea5ec45e5f8a5</act:parent>
+</gnc:account>
+<gnc:account version="2.0.0">
+	<act:name>Christopher Parker</act:name>
+	<act:id type="new">D0BC3FD9139549A1B12B1BB8D6F46B07</act:id>
+	<act:type>ASSET</act:type>
+	<act:commodity>
+		<cmdty:space>ISO4217</cmdty:space>
+		<cmdty:id>USD</cmdty:id>
+	</act:commodity>
+	<act:commodity-scu>100</act:commodity-scu>
+	<act:code>20</act:code>
+	<act:description>599 Elgar Alley, Angkahgede, India</act:description>
+	<act:slots>
+		<slot>
+			<slot:key>color</slot:key>
+			<slot:value type="string">Not Set</slot:value>
+		</slot>
+		<slot>
+			<slot:key>notes</slot:key>
+			<slot:value type="string">Full Name: 
+Dr Christopher Parker
+Address: 
+599 Elgar Alley, Angkahgede, India
+Land Line: 
+62-(664)443-2344
+Mobile: 
+504-(490)128-9644
+Group: 
+Koramangala
+</slot:value>
+		</slot>
+	</act:slots>
+	<act:parent type="guid">8999739a6bfc46088a3ea5ec45e5f8a5</act:parent>
+</gnc:account>
+<gnc:account version="2.0.0">
+	<act:name>Walter Martinez</act:name>
+	<act:id type="new">3302796BC2E44709B9178CA93F72EFF0</act:id>
+	<act:type>ASSET</act:type>
+	<act:commodity>
+		<cmdty:space>ISO4217</cmdty:space>
+		<cmdty:id>USD</cmdty:id>
+	</act:commodity>
+	<act:commodity-scu>100</act:commodity-scu>
+	<act:code>21</act:code>
+	<act:description>64 Ridgeview Street, Aranguren, India</act:description>
+	<act:slots>
+		<slot>
+			<slot:key>color</slot:key>
+			<slot:value type="string">Not Set</slot:value>
+		</slot>
+		<slot>
+			<slot:key>notes</slot:key>
+			<slot:value type="string">Full Name: 
+Dr Walter Martinez
+Address: 
+64 Ridgeview Street, Aranguren, India
+Land Line: 
+54-(568)570-9306
+Mobile: 
+62-(595)451-2559
+Group: 
+Sarjapur
+</slot:value>
+		</slot>
+	</act:slots>
+	<act:parent type="guid">8999739a6bfc46088a3ea5ec45e5f8a5</act:parent>
+</gnc:account>
+<gnc:account version="2.0.0">
+	<act:name>Dennis Howell</act:name>
+	<act:id type="new">C84F8DF4852B4D46A50598E67F9FF601</act:id>
+	<act:type>ASSET</act:type>
+	<act:commodity>
+		<cmdty:space>ISO4217</cmdty:space>
+		<cmdty:id>USD</cmdty:id>
+	</act:commodity>
+	<act:commodity-scu>100</act:commodity-scu>
+	<act:code>22</act:code>
+	<act:description>51 Lillian Way, Shanglian, India</act:description>
+	<act:slots>
+		<slot>
+			<slot:key>color</slot:key>
+			<slot:value type="string">Not Set</slot:value>
+		</slot>
+		<slot>
+			<slot:key>notes</slot:key>
+			<slot:value type="string">Full Name: 
+Ms Dennis Howell
+Address: 
+51 Lillian Way, Shanglian, India
+Land Line: 
+86-(586)869-7718
+Mobile: 
+60-(529)922-8558
+Group: 
+Sarjapur
+</slot:value>
+		</slot>
+	</act:slots>
+	<act:parent type="guid">8999739a6bfc46088a3ea5ec45e5f8a5</act:parent>
+</gnc:account>
+<gnc:account version="2.0.0">
+	<act:name>Dorothy Edwards</act:name>
+	<act:id type="new">744EEDB7AE8848A69180986D35E9D8FF</act:id>
+	<act:type>ASSET</act:type>
+	<act:commodity>
+		<cmdty:space>ISO4217</cmdty:space>
+		<cmdty:id>USD</cmdty:id>
+	</act:commodity>
+	<act:commodity-scu>100</act:commodity-scu>
+	<act:code>23</act:code>
+	<act:description>539 Dottie Circle, Kazanskoye, India</act:description>
+	<act:slots>
+		<slot>
+			<slot:key>color</slot:key>
+			<slot:value type="string">Not Set</slot:value>
+		</slot>
+		<slot>
+			<slot:key>notes</slot:key>
+			<slot:value type="string">Full Name: 
+Mr Dorothy Edwards
+Address: 
+539 Dottie Circle, Kazanskoye, India
+Land Line: 
+7-(420)275-3285
+Mobile: 
+62-(188)849-8246
+Group: 
+Koramangala
+</slot:value>
+		</slot>
+	</act:slots>
+	<act:parent type="guid">8999739a6bfc46088a3ea5ec45e5f8a5</act:parent>
+</gnc:account>
+<gnc:account version="2.0.0">
+	<act:name>Maria Stone</act:name>
+	<act:id type="new">B5E291B958D3450387EE5E2C072C4486</act:id>
+	<act:type>ASSET</act:type>
+	<act:commodity>
+		<cmdty:space>ISO4217</cmdty:space>
+		<cmdty:id>USD</cmdty:id>
+	</act:commodity>
+	<act:commodity-scu>100</act:commodity-scu>
+	<act:code>24</act:code>
+	<act:description>66514 Ryan Center, Gravataí, India</act:description>
+	<act:slots>
+		<slot>
+			<slot:key>color</slot:key>
+			<slot:value type="string">Not Set</slot:value>
+		</slot>
+		<slot>
+			<slot:key>notes</slot:key>
+			<slot:value type="string">Full Name: 
+Rev Maria Stone
+Address: 
+66514 Ryan Center, Gravataí, India
+Land Line: 
+55-(844)190-9830
+Mobile: 
+57-(581)332-2634
+Group: 
+Sarjapur
+</slot:value>
+		</slot>
+	</act:slots>
+	<act:parent type="guid">8999739a6bfc46088a3ea5ec45e5f8a5</act:parent>
+</gnc:account>
+</gnc-account-example>
+<!-- Local variables: -->
+<!-- mode: xml        -->
+<!-- End:             -->
